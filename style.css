@@ -202,3 +202,20 @@ textarea{resize:vertical}
   .share{width:34px;top:150px}.share a{height:32px;font-size:16px}
   .totop{right:14px;bottom:14px}
 }
+/* Hero text animation */
+.slide .container h1,
+.slide .sub-text,
+.slide .hero-btns{opacity:0}
+
+.slide.active .container h1{animation:heroUp .8s ease .3s forwards}
+.slide.active .sub-text{animation:heroUp .8s ease .6s forwards}
+.slide.active .hero-btns{animation:heroUp .8s ease .9s forwards}
+
+@keyframes heroUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .slide .container h1,.slide .sub-text,.slide .hero-btns{opacity:1;animation:none!important}
+}
